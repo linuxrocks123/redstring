@@ -1,0 +1,25 @@
+Server:
+- Connect with name of group to join, which serves as only
+  authentication.
+- Message from one client is sent to all others in same group, but not
+  sent back to sender.
+- Use OnTask message format for messages.
+- Messages should be asynchronously sent with no ACK or anything like
+  that.
+- Server is single-threaded and uses select() to handle message
+  passing.
+
+Client:
+- select() on server connection, standard input, and mpv JSON IPC.
+
+Message Types:
+- From Client:
+  - HELLO / Nickname\nNameOfGroup
+  - PAUSE / AbsoluteSeekLocation
+  - SEEK / AbsoluteSeekLocation
+  - PLAY / ignored
+  - CHAT / Text to display
+- From Server:
+  - ROSTER / List of everyone connected to a group, one per line
+    This message is sent in response to HELLO and then again whenever
+    group membership changes.

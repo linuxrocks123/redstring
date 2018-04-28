@@ -1,0 +1,52 @@
+pause
+{"event":"pause"}
+get-property pause
+pause
+{"event":"unpause"}
+pause
+{"event":"pause"}
+{}
+{"error":"invalid parameter"}
+get-o
+get0p
+get-property pause
+{ "command": ["get_property", "playback-time"] }
+{"data":86.920000,"error":"success"}
+{ "command": ["get_property", "pause"] }
+{"data":true,"error":"success"}
+pause
+{"event":"unpause"}
+{ "command": ["get_property", "pause"] }
+{"data":false,"error":"success"}
+pause
+{"event":"pause"}
+{ "command": ["get_property", "playback-time"] }
+{"data":100.309000,"error":"success"}
+{ "command": ["seek","200","absolute"]}
+{"data":null,"error":"success"}
+{"event":"seek"}
+{"event":"playback-restart"}
+{"event":"unpause"}
+{"event":"pause"}
+pause
+{"event":"unpause"}
+pause
+{"event":"pause"}
+{ "command": ["seek","86.920000","absolute"]}
+{"data":null,"error":"success"}
+{"event":"seek"}
+{"event":"playback-restart"}
+{"event":"audio-reconfig"}
+{"event":"video-reconfig"}
+{"event":"tracks-changed"}
+{"event":"end-file"}
+2018/04/27 19:56:13 socat[18190] E connect(5, AF=1 "whatev", 8): Connection refused
+show-text hi
+show-text hi 
+show-text LOL that's really funny!
+{"command": ["show-text","LOL that's really funny!"]}
+{"data":null,"error":"success"}
+{"event":"audio-reconfig"}
+{"event":"video-reconfig"}
+{"event":"tracks-changed"}
+{"event":"end-file"}
