@@ -93,7 +93,7 @@ while True:
 
             #Send message to all other group members
             for member in set(sockets_for_group[group_for_socket[socket]]):
-                if member!=socket:
+                if member!=socket or message.cmd_id=="CHAT":
                     try:
                         member.write(message.get_message_string())
                         member.flush()
