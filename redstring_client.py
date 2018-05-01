@@ -94,7 +94,8 @@ while True:
             send_json_ipc('{"command":["set_property","pause",false]}')
         elif received_ontask.cmd_id=="CHAT":
             send_json_ipc('{"command":["show-text","'+received_ontask.body.replace("\\","\\\\").replace('"','\\"')+'",10000]}')
-            print received_ontask.body
+            if received_ontask.body.find(nick+":")!=0: #don't reprint messages we sent
+                print received_ontask.body
         elif received_ontask.cmd_id=="ROSTER":
             send_json_ipc('{"command":["show-text","ROSTER: '+", ".join(received_ontask.body.splitlines())+'",3000]}')
             print "ROSTER: "+", ".join(received_ontask.body.splitlines())
