@@ -93,9 +93,11 @@ while True:
             should_be_paused = False
             send_json_ipc('{"command":["set_property","pause",false]}')
         elif received_ontask.cmd_id=="CHAT":
-            send_json_ipc('{"command":["show-text","'+received_ontask.body.replace("\\","\\\\").replace('"','\\"')+'",6000]}')
+            send_json_ipc('{"command":["show-text","'+received_ontask.body.replace("\\","\\\\").replace('"','\\"')+'",10000]}')
+            print received_ontask.body
         elif received_ontask.cmd_id=="ROSTER":
             send_json_ipc('{"command":["show-text","ROSTER: '+", ".join(received_ontask.body.splitlines())+'",3000]}')
+            print "ROSTER: "+", ".join(received_ontask.body.splitlines())
         else: #invalid message; quit
             print "ERROR: invalid command "+recevied_ontask.cmd_id+" received from server."
             send_json_ipc('{"command":["quit"]}')
