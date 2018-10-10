@@ -1,0 +1,28 @@
+MythFrontend Network Control
+Type 'help' for usage information
+---------------------------------
+# play speed pause
+OK
+# query location
+Playback Recorded 2:08 of 31:40 pause 1689 2018-10-07T17:13:00Z 3865 myth://tardis/1689_20181007171300.ts 29.97 Subtitles: *0:[None]*
+# seek 22:33
+INVALID command 'seek', try 'help' for more info
+# play seek 22:33
+ERROR: See 'help play' for usage information
+# play seek 00:22:33
+OK
+# play speed normal
+OK
+# message hello
+OK
+# notification hello
+OK
+# notification this is really cheesy
+OK
+# play speed pause
+OK
+# notification cheesy
+OK
+# query location
+Playback Recorded 23:21 of 31:40 pause 1689 2018-10-07T17:13:00Z 42005 myth://tardis/1689_20181007171300.ts 29.97 Subtitles: *0:[None]*
+# quit
